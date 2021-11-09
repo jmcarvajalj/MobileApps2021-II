@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
+    <string name="new_game">New Game</string>
+    <string name="change_difficulty">Changes difficulty</string>
+    <string name="quit_game">Quit game</string>
+    <string name="name_of_the_app">Name of the app</string>
 </resources>

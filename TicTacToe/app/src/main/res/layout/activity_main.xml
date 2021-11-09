@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/logo"
-        android:contentDescription="Name of the app"
+        android:contentDescription="@string/name_of_the_app"
         android:translationY="20dp" />
 
     <TextView
@@ -47,16 +46,50 @@
         android:translationY="20dp"
         android:useDefaultMargins="true" />
 
-    <Button
-        android:id="@+id/button_restart"
-        android:layout_width="290dp"
-        android:layout_height="80dp"
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_marginBottom="28dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/lato_bold"
-        android:text="New Game"
-        android:textAllCaps="false"
-        android:textSize="20sp" />
+        android:orientation="horizontal"
+        android:layout_width="380dp"
+        android:layout_height="80dp">
+
+        <Button
+            android:id="@+id/button_restart"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/new_game"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_difficulty"
+            android:layout_width="140dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/change_difficulty"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_quit"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/quit_game"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 </RelativeLayout>

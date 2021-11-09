@@ -1,12 +1,14 @@
 package co.edu.unal.tictactoe
 
 import android.os.Bundle
+import android.os.Process
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,10 @@ class MainActivity : AppCompatActivity() {
             board = Board()
             text_view_result.text = ""
             mapBoardToUi()
+        }
+
+        button_quit.setOnClickListener {
+            finishAndRemoveTask()
         }
     }
 

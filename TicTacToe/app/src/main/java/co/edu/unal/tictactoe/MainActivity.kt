@@ -11,12 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-
     private val boardCells = Array(3){ arrayOfNulls<ImageView>(3)}
-
     var board = Board()
+    var selectedItemIndex = 0
+    private val arrItems = arrayOf("Easy", "Harder", "Expert")
+    var selectedItem = arrItems[selectedItemIndex]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,12 +52,30 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        button_difficulty.setOnClickListener {
+        val difficultyLevelDialog = findViewById<TextView>(R.id.button_difficulty)
 
-            val aboutDialog = AlertDialog.Builder(this).setTitle("\t\t\t\t\tChange Difficulty")
-                .setIcon(R.mipmap.tictactoeicon)
-                .show()
+        difficultyLevelDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+            .setTitle("Change Difficulty")
+            .setSingleChoiceItems(arrItems, selectedItemIndex) { _, which ->
+                selectedItemIndex = which
+                selectedItem = arrItems[which]
+            }
+            .setPositiveButton("OK") { _, _ ->
+                board = Board()
+                text_view_result.text = ""
+                mapBoardToUi()
+                showSnackbar(it, "$selectedItem level selected")
+            }
+            .setNeutralButton("Cancel") {difficultyLevelDialog, which ->
+                difficultyLevelDialog.dismiss()
+            }
+            .show()
         }
+    }
+
+    fun showSnackbar(view: View, msg: String){
+        Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,7 +85,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         val aboutDialog = AlertDialog.Builder(this)
 
         return when (item.itemId) {

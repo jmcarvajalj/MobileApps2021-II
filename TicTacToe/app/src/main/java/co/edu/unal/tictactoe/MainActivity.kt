@@ -1,14 +1,18 @@
 package co.edu.unal.tictactoe
 
 import android.os.Bundle
-import android.os.Process
 import android.view.View
+import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.system.exitProcess
+import android.widget.TextView
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +33,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_quit.setOnClickListener {
-            finishAndRemoveTask()
+
+        val dialog = AlertDialog.Builder(this).setTitle("Quit Game")
+            .setMessage("Do you really want to quit?")
+            .setIcon(R.mipmap.tictactoeicon)
+            .setPositiveButton("Yes") { _, _ ->
+                finishAndRemoveTask()
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }.show()
+
+        val message = dialog.findViewById<View>(android.R.id.message) as TextView?
+        message?.textSize = 26f
+        //TODO - Create custom alert dialog
+
         }
     }
 

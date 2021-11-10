@@ -2,7 +2,8 @@ package co.edu.unal.tictactoe
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.GridLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
@@ -10,9 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
-
-
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,14 +38,49 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Yes") { _, _ ->
                 finishAndRemoveTask()
             }
-            .setNegativeButton("No") { dialog, _ ->
+            .setNeutralButton("No") { dialog, _ ->
                 dialog.dismiss()
-            }.show()
+            }
+            .show()
 
         val message = dialog.findViewById<View>(android.R.id.message) as TextView?
         message?.textSize = 26f
         //TODO - Create custom alert dialog
 
+        }
+
+        button_difficulty.setOnClickListener {
+
+            val aboutDialog = AlertDialog.Builder(this).setTitle("\t\t\t\t\tChange Difficulty")
+                .setIcon(R.mipmap.tictactoeicon)
+                .show()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val aboutDialog = AlertDialog.Builder(this)
+
+        return when (item.itemId) {
+
+            R.id.about_item -> {
+                aboutDialog.setTitle("About this game")
+                    .setMessage("Tic Tac Toe by:\n\nJose Miguel Carvajal Jimenez\n\nDon't let android beat you!")
+                    .setIcon(R.mipmap.tictactoeicon)
+                    .setPositiveButton("Close"){ dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .show()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 mapBoardToUi()
                 showSnackbar(it, "$selectedItem level selected")
             }
-            .setNeutralButton("Cancel") {difficultyLevelDialog, which ->
+            .setNeutralButton("Cancel") { difficultyLevelDialog, _ ->
                 difficultyLevelDialog.dismiss()
             }
             .show()

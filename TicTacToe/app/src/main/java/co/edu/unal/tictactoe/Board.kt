@@ -81,7 +81,6 @@ class Board {
         return false
     }
 
-
     var computersMove: Cell? = null
     fun minimax(depth: Int, player: String): Int {
         if (hasComputerWon()) return +1
@@ -131,5 +130,4 @@ class Board {
     fun placeMove(cell: Cell, player: String) {
         board[cell.i][cell.j] = player
     }
-
 }

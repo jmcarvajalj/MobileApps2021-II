@@ -2,6 +2,7 @@ package co.edu.unal.tictactoe
 
 import android.os.Bundle
 import android.view.View
+import android.media.MediaPlayer
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.GridLayout
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_quit.setOnClickListener {
-
         val dialog = AlertDialog.Builder(this).setTitle("Quit Game")
             .setMessage("Do you really want to quit?")
             .setIcon(R.mipmap.tictactoeicon)
@@ -45,11 +45,8 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
-
         val message = dialog.findViewById<View>(android.R.id.message) as TextView?
         message?.textSize = 26f
-        //TODO - Create custom alert dialog
-
         }
 
         val difficultyLevelDialog = findViewById<TextView>(R.id.button_difficulty)
@@ -74,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showSnackbar(view: View, msg: String){
+    private fun showSnackbar(view: View, msg: String){
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
     }
 
@@ -105,15 +102,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mapBoardToUi() {
+
         for (i in board.board.indices) {
             for (j in board.board.indices) {
                 when (board.board[i][j]) {
                     Board.PLAYER -> {
-                        boardCells[i][j]?.setImageResource(R.drawable.o)
+                        boardCells[i][j]?.setImageResource(R.drawable.x)
                         boardCells[i][j]?.isEnabled = false
                     }
                     Board.COMPUTER -> {
-                        boardCells[i][j]?.setImageResource(R.drawable.x)
+                        boardCells[i][j]?.setImageResource(R.drawable.o)
                         boardCells[i][j]?.isEnabled = false
                     }
                     else -> {
@@ -151,18 +149,30 @@ class MainActivity : AppCompatActivity() {
         private val j: Int
     ) : View.OnClickListener {
 
-        override fun onClick(p0: View?) {
+        private fun playHumanSound(){
+            val mediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.sound1)
+            mediaPlayer.start()
+        }
 
+        private fun playComputerSound(){
+            val mediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.sound2)
+            mediaPlayer.start()
+        }
+
+        override fun onClick(p0: View?) {
             if (!board.isGameOver) {
                 val cell = Cell(i, j)
                 board.placeMove(cell, Board.PLAYER)
+                mapBoardToUi()
+                playHumanSound()
                 board.minimax(0, Board.COMPUTER)
                 board.computersMove?.let {
                     board.placeMove(it, Board.COMPUTER)
+                    Thread.sleep(500)
+                    playComputerSound()
                 }
                 mapBoardToUi()
             }
-
             when {
                 board.hasComputerWon() -> text_view_result.text = "Android Won!"
                 board.hasPlayerWon() -> text_view_result.text = "You Won!"

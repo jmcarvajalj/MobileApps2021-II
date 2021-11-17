@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                 board.minimax(0, Board.COMPUTER)
                 board.computersMove?.let {
                     board.placeMove(it, Board.COMPUTER)
-                    Thread.sleep(500)
+                    Thread.sleep(400)
                     playComputerSound()
                 }
                 mapBoardToUi()

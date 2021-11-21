@@ -102,7 +102,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mapBoardToUi() {
-
         for (i in board.board.indices) {
             for (j in board.board.indices) {
                 when (board.board[i][j]) {

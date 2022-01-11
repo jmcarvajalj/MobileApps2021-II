@@ -11,19 +11,75 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:onClick="saveRecord"
+            android:text="@string/save"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:onClick="viewRecord"
+            android:text="@string/view"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:onClick="updateRecord"
+            android:text="@string/update"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:onClick="deleteRecord"
+            android:text="@string/delete"
+            android:textSize="12sp" />
+    </LinearLayout>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TableRow android:layout_height="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="@string/id" />
+
+            <EditText
+                android:id="@+id/id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:width="150px" />
+        </TableRow>
+
         <TableRow>
             <TextView
-                android:text="@string/user_id"
+                android:text="@string/nombre_de_empresa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1" />
 
             <EditText
-                android:id="@+id/u_id"
+                android:id="@+id/nombre_empresa"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
@@ -33,77 +89,95 @@
 
         <TableRow>
             <TextView
-                android:text="@string/user_name"
+                android:text="@string/web_page_url"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1" />
 
             <EditText
-                android:id="@+id/u_name"
-                android:width="200dp"
+                android:id="@+id/page_url"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp"
+                android:width="150px" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/telefono_de_contacto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="2"
+                android:layout_column="1" />
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
                 android:layout_marginStart="20sp"
-                android:layout_marginLeft="20sp"/>
+                android:width="150px" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/email_de_contacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <EditText
+                android:id="@+id/contact_email"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp"
+                android:width="150px" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/productos_y_servicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <EditText
+                android:id="@+id/products_and_services"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp"
+                android:width="150px" />
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="@string/user_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:text="@string/clasificacion_de_la_empresa" />
 
             <EditText
-                android:id="@+id/u_email"
-                android:width="200dp"
-                android:layout_width="wrap_content"
+                android:id="@+id/type_of_company"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_column="2"
                 android:layout_marginStart="20sp"
-                android:layout_marginLeft="20sp" />
+                android:layout_marginLeft="20sp"
+                android:width="150px" />
         </TableRow>
 
     </TableLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="350sp"
+        android:layout_height="325sp"
         android:layout_marginTop="20sp">
         <ListView
             android:id="@+id/listView"
             android:layout_width="wrap_content"
-            android:layout_height="350sp"/>
+            android:layout_height="325sp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40sp"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:onClick="saveRecord"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view"
-            android:onClick="viewRecord"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update"
-            android:onClick="updateRecord"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delete"
-            android:onClick="deleteRecord"/>
-    </LinearLayout>
 </LinearLayout>

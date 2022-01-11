@@ -10,5 +10,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="enter id" />
+        android:hint="@string/ingrese_la_id_de_la_empresa" />
 </LinearLayout>

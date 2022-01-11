@@ -1,13 +1,25 @@
 <resources>
-    <string name="app_name">sqliteapp</string>
-    <string name="user_id">User Id</string>
+    <string name="app_name">Reto 8 - Sqlite App</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>
-    <string name="view">View</string>
-    <string name="save">Save</string>
-    <string name="user_email">User Email</string>
+    <string name="view">Read</string>
+    <string name="save">Create</string>
     <string name="user_name">User Name</string>
-    <string name="id">Id</string>
-    <string name="name">Name</string>
-    <string name="email">Email</string>
+    <string name="id">Id de la empresa</string>
+    <string name="name">Nombre de la empresa</string>
+    <string name="email">Email de contacto</string>
+    <string name="nombre_de_empresa">Nombre de la empresa</string>
+    <string name="web_page_url">URL de la pagina web</string>
+    <string name="telefono_de_contacto">Teléfono de contacto</string>
+    <string name="email_de_contacto">Email de contacto</string>
+    <string name="productos_y_servicios">Productos y servicios</string>
+    <string name="clasificacion_de_la_empresa">Clasificación de la empresa</string>
+    <string name="ingrese_la_id_de_la_empresa">Ingrese la ID de la empresa:</string>
+    <string name="ingrese_id_de_la_empresa">Ingrese ID de la empresa:</string>
+    <string name="ingrese_nombre_de_la_empresa">Ingrese nombre de la empresa:</string>
+    <string name="ingrese_email_de_la_empresa">Ingrese email de la empresa:</string>
+    <string name="ingrese_url_de_la_empresa">Ingrese URL de la empresa:</string>
+    <string name="ingrese_telefono_de_la_empresa">Ingrese telefono de la empresa:</string>
+    <string name="ingrese_productos_de_la_empresa">Ingrese productos de la empresa:</string>
+    <string name="ingrese_clasificacion_de_la_empresa">Ingrese clasificacion de la empresa:</string>
 </resources>

@@ -17,13 +17,18 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         private val KEY_ID = "id"
         private val KEY_NAME = "name"
         private val KEY_EMAIL = "email"
+        private val KEY_URL = "url"
+        private val KEY_PHONE= "phone"
+        private val KEY_PRODUCTS = "products"
+        private val KEY_TYPE = "type"
     }
     override fun onCreate(db: SQLiteDatabase?) {
         // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         //creating table with fields
         val CREATE_CONTACTS_TABLE = ("CREATE TABLE " + TABLE_CONTACTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_EMAIL + " TEXT" + ")")
+                + KEY_EMAIL + " TEXT," + KEY_URL + " TEXT," + KEY_PHONE + " INTEGER,"
+                + KEY_PRODUCTS + " TEXT," + KEY_TYPE + " TEXT" + ")")
         db?.execSQL(CREATE_CONTACTS_TABLE)
     }
 
@@ -38,9 +43,13 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
     fun addEmployee(emp: EmpModelClass):Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(KEY_ID, emp.userId)
-        contentValues.put(KEY_NAME, emp.userName) // EmpModelClass Name
-        contentValues.put(KEY_EMAIL,emp.userEmail ) // EmpModelClass Phone
+        contentValues.put(KEY_ID, emp.idCompany)
+        contentValues.put(KEY_NAME, emp.name) // EmpModelClass Name
+        contentValues.put(KEY_EMAIL,emp.email ) // EmpModelClass Phone
+        contentValues.put(KEY_URL, emp.url)
+        contentValues.put(KEY_PHONE, emp.phone) // EmpModelClass Name
+        contentValues.put(KEY_PRODUCTS,emp.products) // EmpModelClass Phone
+        contentValues.put(KEY_TYPE, emp.type)
         // Inserting Row
         val success = db.insert(TABLE_CONTACTS, null, contentValues)
         //2nd argument is String containing nullColumnHack
@@ -60,15 +69,24 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
             db.execSQL(selectQuery)
             return ArrayList()
         }
-        var userId: Int
-        var userName: String
-        var userEmail: String
+        var id: Int
+        var name: String
+        var email: String
+        var url: String
+        var phone: Int
+        var products: String
+        var type: String
+
         if (cursor.moveToFirst()) {
             do {
-                userId = cursor.getInt(cursor.getColumnIndex("id"))
-                userName = cursor.getString(cursor.getColumnIndex("name"))
-                userEmail = cursor.getString(cursor.getColumnIndex("email"))
-                val emp= EmpModelClass(userId = userId, userName = userName, userEmail = userEmail)
+                id = cursor.getInt(cursor.getColumnIndex("id"))
+                name = cursor.getString(cursor.getColumnIndex("name"))
+                email = cursor.getString(cursor.getColumnIndex("email"))
+                url = cursor.getString(cursor.getColumnIndex("url"))
+                phone = cursor.getInt(cursor.getColumnIndex("phone"))
+                products = cursor.getString(cursor.getColumnIndex("products"))
+                type = cursor.getString(cursor.getColumnIndex("type"))
+                val emp= EmpModelClass(idCompany = id, name = name, email = email, url=url, phone=phone, products=products, type=type)
                 empList.add(emp)
             } while (cursor.moveToNext())
         }
@@ -78,12 +96,16 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
     fun updateEmployee(emp: EmpModelClass):Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(KEY_ID, emp.userId)
-        contentValues.put(KEY_NAME, emp.userName) // EmpModelClass Name
-        contentValues.put(KEY_EMAIL,emp.userEmail ) // EmpModelClass Email
+        contentValues.put(KEY_ID, emp.idCompany)
+        contentValues.put(KEY_NAME, emp.name) // EmpModelClass Name
+        contentValues.put(KEY_EMAIL,emp.email ) // EmpModelClass Email
+        contentValues.put(KEY_URL, emp.url)
+        contentValues.put(KEY_PHONE, emp.phone) // EmpModelClass Name
+        contentValues.put(KEY_PRODUCTS,emp.products ) // EmpModelClass Email
+        contentValues.put(KEY_TYPE, emp.type)
 
         // Updating Row
-        val success = db.update(TABLE_CONTACTS, contentValues,"id="+emp.userId,null)
+        val success = db.update(TABLE_CONTACTS, contentValues,"id="+emp.idCompany,null)
         //2nd argument is String containing nullColumnHack
         db.close() // Closing database connection
         return success
@@ -92,9 +114,9 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
     fun deleteEmployee(emp: EmpModelClass):Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(KEY_ID, emp.userId) // EmpModelClass UserId
+        contentValues.put(KEY_ID, emp.idCompany) // EmpModelClass UserId
         // Deleting Row
-        val success = db.delete(TABLE_CONTACTS,"id="+emp.userId,null)
+        val success = db.delete(TABLE_CONTACTS,"id="+emp.idCompany,null)
         //2nd argument is String containing nullColumnHack
         db.close() // Closing database connection
         return success

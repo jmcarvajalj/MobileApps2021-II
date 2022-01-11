@@ -10,19 +10,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="enter id" />
+        android:hint="@string/ingrese_id_de_la_empresa" />
 
     <EditText
         android:id="@+id/updateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="enter name"/>
+        android:hint="@string/ingrese_nombre_de_la_empresa"/>
+
+    <EditText
+        android:id="@+id/updateUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ingrese_url_de_la_empresa"/>
+
+    <EditText
+        android:id="@+id/updatePhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ingrese_telefono_de_la_empresa"/>
 
     <EditText
         android:id="@+id/updateEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="enter email"/>
+        android:hint="@string/ingrese_email_de_la_empresa"/>
+
+    <EditText
+        android:id="@+id/updateProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ingrese_productos_de_la_empresa"/>
+
+    <EditText
+        android:id="@+id/updateType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ingrese_clasificacion_de_la_empresa"/>
 </LinearLayout>

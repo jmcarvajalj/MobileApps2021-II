@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.edu.unal.tictactoe">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/tictactoeicon"
@@ -9,6 +11,18 @@
         android:roundIcon="@mipmap/tictactoeicon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
+        <activity
+            android:name=".OnlineMultiPlayerGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OnlineCodeGeneratorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MultiPlayerGameSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameplayActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -18,6 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -1,53 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".MultiPlayerGameSelectionActivity">
 
-    <ImageView
-        android:id="@+id/image_view_name"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/logo"
-        android:contentDescription="@string/name_of_the_app"
-        android:translationY="20dp" />
-
-    <Button
-        android:id="@+id/single_player"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/idTVHead"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/image_view_name"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/lato_bold"
-        android:text="@string/single_player"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Online or Offline"
         android:textAlignment="center"
-        android:textAllCaps="false"
-        android:layout_marginTop="100dp"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/multi_player"
+        android:id="@+id/idBtnOnline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/single_player"
+        android:layout_below="@+id/idTVHead"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
+        android:text="@string/online_mode"
         android:fontFamily="@font/lato_bold"
-        android:text="@string/multiplayer"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/idBtnOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idBtnOnline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/offline_mode"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/button_quit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/multi_player"
+        android:layout_below="@+id/idBtnOffline"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/lato_bold"

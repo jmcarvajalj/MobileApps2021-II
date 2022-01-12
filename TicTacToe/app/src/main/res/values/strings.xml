@@ -5,4 +5,13 @@
     <string name="quit_game">Quit game</string>
     <string name="name_of_the_app">Name of the app</string>
     <string name="about">About</string>
+    <string name="offline_mode">Offline mode</string>
+    <string name="online_mode">Online mode</string>
+    <string name="single_player">Single player</string>
+    <string name="multiplayer">Multiplayer</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="create">Create</string>
+    <string name="join">Join</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
 </resources>

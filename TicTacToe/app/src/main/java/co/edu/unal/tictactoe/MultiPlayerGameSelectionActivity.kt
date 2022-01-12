@@ -1,38 +1,34 @@
 package co.edu.unal.tictactoe
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import kotlinx.android.synthetic.main.activity_main.*
 
-var singleUser = false
-class MainActivity : AppCompatActivity() {
+class MultiPlayerGameSelectionActivity : AppCompatActivity() {
 
-    lateinit var singlePlayerBtn: Button
-    lateinit var multiPlayerBtn: Button
+    lateinit var onlineBtn: Button
+    lateinit var offlineBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        singlePlayerBtn = findViewById(R.id.single_player)
-        multiPlayerBtn = findViewById(R.id.multi_player)
-
-        singlePlayerBtn.setOnClickListener {
-            singleUser = true
+        setContentView(R.layout.activity_multi_player_game_selection)
+        onlineBtn = findViewById(R.id.idBtnOnline)
+        offlineBtn = findViewById(R.id.idBtnOffline)
+        onlineBtn.setOnClickListener {
+            singleUser = false
+            startActivity(Intent(this, OnlineCodeGeneratorActivity::class.java))
+        }
+        offlineBtn.setOnClickListener {
+            singleUser = false
             startActivity(Intent(this, GameplayActivity::class.java))
         }
-
-        multiPlayerBtn.setOnClickListener {
-            singleUser = false
-            startActivity(Intent(this, MultiPlayerGameSelectionActivity::class.java))
-        }
-
 
 
         button_quit.setOnClickListener {
@@ -49,10 +45,7 @@ class MainActivity : AppCompatActivity() {
         val message = dialog.findViewById<View>(android.R.id.message) as TextView?
         message?.textSize = 26f
         }
-
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
@@ -67,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
             R.id.about_item -> {
                 aboutDialog.setTitle("About this game")
-                    .setMessage("Tic Tac Toe by:\n\nJose Miguel Carvajal Jimenez\n\nDon't let android beat you!")
+                    .setMessage("Tic Tac Toe by:\n\nJose Miguel Carvajal Jimenez\n\nDon't let your opponent beat you!")
                     .setIcon(R.mipmap.tictactoeicon)
                     .setPositiveButton("Close"){ dialog, _ ->
                         dialog.dismiss()

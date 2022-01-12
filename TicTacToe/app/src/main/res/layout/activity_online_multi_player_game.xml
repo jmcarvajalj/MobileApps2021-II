@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OnlineMultiPlayerGameActivity">
+
+    <ImageView
+        android:id="@+id/image_view_name"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/name_of_the_app"
+        android:translationY="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/idTVPlayer1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_bold"
+            android:padding="4dp"
+            android:text="@string/player_1"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/idTVPlayer2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/lato_bold"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:text="@string/player_2"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/idBtnBox1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox2"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox3"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox4"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox5"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox6"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox7"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox8"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/idBtnBox9"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:backgroundTint="#0099CC"
+            app:cornerRadius="0dp"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:layout_gravity="center"
+        android:text="@string/quit_game"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp" />
+
+</LinearLayout>

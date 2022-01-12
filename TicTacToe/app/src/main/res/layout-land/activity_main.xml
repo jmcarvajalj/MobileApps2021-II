@@ -4,90 +4,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".GameplayActivity">
 
     <ImageView
         android:id="@+id/image_view_name"
-        android:layout_width="120dp"
-        android:layout_height="260dp"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="false"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/landlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logo"
         android:contentDescription="@string/name_of_the_app"
         android:translationY="20dp" />
 
-    <TextView
-        android:id="@+id/text_view_result"
+    <Button
+        android:id="@+id/single_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/layout_board"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
+        android:layout_below="@+id/image_view_name"
         android:fontFamily="@font/lato_bold"
+        android:text="@string/single_player"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:translationY="55dp"
-        android:typeface="normal"
-        tools:text="Computer Won" />
+        android:layout_marginTop="70dp"
+        android:textSize="20sp" />
 
-    <GridLayout
-        android:id="@+id/layout_board"
+    <Button
+        android:id="@+id/multi_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:alignmentMode="alignBounds"
-        android:columnCount="3"
-        android:padding="16dp"
-        android:rowCount="3"
-        android:translationY="20dp"
-        android:useDefaultMargins="true" />
+        android:layout_below="@+id/single_player"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/multiplayer"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
 
-    <LinearLayout
-        android:id="@+id/buttons_layout"
-        android:layout_width="140dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:orientation="vertical"
-        android:translationX="520dp"
-        android:translationY="40dp">
+    <Button
+        android:id="@+id/button_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multi_player"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/quit_game"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/button_restart"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="@string/new_game"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/button_difficulty"
-            android:layout_width="140dp"
-            android:layout_height="80dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="@string/change_difficulty"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/button_quit"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="@string/quit_game"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
-
-    </LinearLayout>
 </RelativeLayout>

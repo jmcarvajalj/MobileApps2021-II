@@ -15,6 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_gameplay.*
 
+var playerTurn=true
 class GameplayActivity : AppCompatActivity() {
     private val boardCells = Array(3){ arrayOfNulls<ImageView>(3)}
     var board = Board()

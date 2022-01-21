@@ -66,8 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio"
-            android:fontFamily="@font/lato_bold"
-            android:id="@+id/pepe"/>
+            android:fontFamily="@font/lato_bold"/>
 
         <EditText
             android:layout_width="70dp"

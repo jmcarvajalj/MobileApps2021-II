@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Reto 9</string>
+    <string name="app_name">Reto 9 - GPS App</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="actualizar_ubicacion">Actualizar ubicación</string>
+    <string name="ubicación_original">Ubicación original</string>
+    <string name="latitud">Latitud:</string>
+    <string name="longitud">Longitud:</string>
+    <string name="radio">Radio:</string>
 </resources>

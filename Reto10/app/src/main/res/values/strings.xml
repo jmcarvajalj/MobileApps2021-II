@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Reto 10</string>
+    <string name="app_name">Reto 10 - Web Services</string>
+    <string name="seleccione_un_municipio">Seleccione un municipio:</string>
+    <string name="titulo">Zonas rurales del departamento de Boyacá que hacen parte del programa \"Conexión total\".</string>
+    <string name="listado">Listado e información de los centros poblados:</string>
 </resources>
